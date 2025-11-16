@@ -126,22 +126,51 @@ For testing the latest features or contributing to cc10x development:
 git clone https://github.com/mountaintopsolutions/cc10x.git
 cd cc10x
 
-# Step 2: Create a symlink to your Claude Code plugins directory
-ln -sfn "$(pwd)/plugins/cc10x" ~/.claude/plugins/cc10x-dev
+# Step 2: Add your local repository as a marketplace
+/plugin marketplace add /path/to/cc10x
 
-# Step 3: Restart Claude Code
+# Step 3: Install from the local marketplace
+/plugin install cc10x@cc10x
+
+# Step 4: Restart Claude Code
 # Done. The development version is now active.
 ```
+
+**Important: Plugin Structure**
+
+The plugin follows Claude Code's standard structure:
+
+```
+plugins/cc10x/
+├── .claude-plugin/
+│   └── plugin.json          # Plugin manifest (ONLY location)
+├── agents/                  # Agent definitions
+├── skills/                  # Skill definitions
+├── hooks/                   # Hook configurations
+└── scripts/                 # Supporting scripts
+```
+
+**Critical**: The `plugin.json` file must ONLY exist in `.claude-plugin/` directory, not at the plugin root level.
+
+**Making Changes**:
+
+After making changes to the plugin:
+
+1. **Update version** in `.claude-plugin/plugin.json`
+2. **Restart Claude Code** to reload the plugin
+3. **Test your changes** with real workflows
+4. **Update CHANGELOG.md** with your changes
 
 **Switching Between Versions**:
 
 ```bash
-# To use the development version:
-ln -sfn /path/to/cc10x/plugins/cc10x ~/.claude/plugins/cc10x-dev
+# To switch to marketplace version:
+/plugin uninstall cc10x@cc10x
+/plugin install cc10x@romiluz13
 
-# To use the marketplace version:
-# Simply uninstall the development symlink
-rm ~/.claude/plugins/cc10x-dev
+# To switch back to development version:
+/plugin uninstall cc10x@romiluz13
+/plugin install cc10x@cc10x
 
 # Restart Claude Code after switching
 ```
@@ -154,9 +183,17 @@ cd /path/to/cc10x
 git pull origin main
 
 # Restart Claude Code to load the updated version
+# No need to reinstall - the marketplace tracks your local files
 ```
 
-**Note**: The development version uses the symlink name `cc10x-dev` to avoid conflicting with the marketplace installation. Both versions can coexist, but only one will be active (the one Claude Code loads first).
+**Verifying Installation**:
+
+```bash
+# Check installed plugins
+/plugin manage
+
+# You should see cc10x@cc10x listed
+```
 
 ### Your First Workflow
 
