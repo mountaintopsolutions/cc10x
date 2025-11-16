@@ -165,11 +165,31 @@ After making changes to the plugin:
 
 ```bash
 # To switch to marketplace version:
-/plugin uninstall cc10x@cc10x
+/plugin manage
+# Navigate to cc10x@cc10x and uninstall it through the UI
+# Then install the marketplace version:
 /plugin install cc10x@romiluz13
 
 # To switch back to development version:
-/plugin uninstall cc10x@romiluz13
+/plugin manage
+# Navigate to cc10x@romiluz13 and uninstall it through the UI
+# Then install the development version:
+/plugin install cc10x@cc10x
+
+# Restart Claude Code after switching
+```
+
+**Alternative: Use disable/enable**:
+
+If you want to keep both versions installed and toggle between them:
+
+```bash
+# Disable development version, enable marketplace version:
+/plugin disable cc10x@cc10x
+/plugin install cc10x@romiluz13
+
+# Disable marketplace version, enable development version:
+/plugin disable cc10x@romiluz13
 /plugin install cc10x@cc10x
 
 # Restart Claude Code after switching
