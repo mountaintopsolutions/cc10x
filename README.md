@@ -117,6 +117,47 @@ Skills load in 3 levels—exactly when needed:
 # Done. That's it.
 ```
 
+### Development Installation
+
+For testing the latest features or contributing to cc10x development:
+
+```bash
+# Step 1: Clone the repository
+git clone https://github.com/mountaintopsolutions/cc10x.git
+cd cc10x
+
+# Step 2: Create a symlink to your Claude Code plugins directory
+ln -sfn "$(pwd)/plugins/cc10x" ~/.claude/plugins/cc10x-dev
+
+# Step 3: Restart Claude Code
+# Done. The development version is now active.
+```
+
+**Switching Between Versions**:
+
+```bash
+# To use the development version:
+ln -sfn /path/to/cc10x/plugins/cc10x ~/.claude/plugins/cc10x-dev
+
+# To use the marketplace version:
+# Simply uninstall the development symlink
+rm ~/.claude/plugins/cc10x-dev
+
+# Restart Claude Code after switching
+```
+
+**Staying Up to Date**:
+
+```bash
+# Pull the latest changes from main
+cd /path/to/cc10x
+git pull origin main
+
+# Restart Claude Code to load the updated version
+```
+
+**Note**: The development version uses the symlink name `cc10x-dev` to avoid conflicting with the marketplace installation. Both versions can coexist, but only one will be active (the one Claude Code loads first).
+
 ### Your First Workflow
 
 ```bash
