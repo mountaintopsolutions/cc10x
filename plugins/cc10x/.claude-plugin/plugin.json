@@ -3,11 +3,12 @@
   "version": "4.9.0",
   "description": "Orchestration plugin for Claude Code with 5 workflows: review, plan, build, debug, validate. Features deterministic intent detection, complexity gating, evidence-first verification, and filesystem-based memory integration.",
   "agents": [
-    "./subagents/code-reviewer/SUBAGENT.md",
-    "./subagents/component-builder/SUBAGENT.md",
-    "./subagents/integration-verifier/SUBAGENT.md",
-    "./subagents/bug-investigator/SUBAGENT.md",
-    "./subagents/planner/SUBAGENT.md"
+    "./agents/code-reviewer/AGENT.md",
+    "./agents/component-builder/AGENT.md",
+    "./agents/integration-verifier/AGENT.md",
+    "./agents/bug-investigator/AGENT.md",
+    "./agents/planner/AGENT.md",
+    "./agents/beads-task-manager/AGENT.md"
   ],
   "author": {
     "name": "Rom Iluz",
