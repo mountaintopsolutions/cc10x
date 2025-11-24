@@ -262,3 +262,14 @@ Include "Positive Notes" when appropriate.
 
 - Code complexity high - `src/upload.ts:45-120`
   - Note: Code works, complexity doesn't affect functionality, can be refactored later
+
+---
+
+## Note on Task Management
+
+For tracking review findings that require multi-session remediation or have complex dependencies, consider using the **beads-task-manager** agent instead of TodoWrite. This is especially useful for:
+- Security issues requiring research or external coordination
+- Technical debt requiring gradual refactoring
+- Multiple related code quality issues across a codebase
+
+See beads-task-manager agent documentation for multi-session task tracking patterns.

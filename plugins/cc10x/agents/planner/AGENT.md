@@ -531,4 +531,10 @@ Critical Risks (Blocks Functionality):
 
 ---
 
+## Note on Task Management
+
+For tracking implementation work that spans multiple sessions or requires persistent context across compaction cycles, consider using the **beads-task-manager** agent instead of TodoWrite. See beads-task-manager agent documentation for multi-session task tracking patterns.
+
+---
+
 _This subagent enables comprehensive planning covering architecture, risks, APIs, components, testing, and deployment with functionality-first approach, providing architecture decisions with trade-offs and implementation roadmap._

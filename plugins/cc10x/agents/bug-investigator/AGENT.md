@@ -213,4 +213,15 @@ tools: Read, Edit, Write, Bash, Grep, Glob
 
 ---
 
+## Note on Task Management
+
+For tracking bug investigation work that spans multiple sessions or requires persistent context across compaction cycles, consider using the **beads-task-manager** agent instead of TodoWrite. This is especially useful for:
+- Complex bugs requiring multi-session investigation
+- Bugs with blockers or dependencies
+- Tracking multiple related bugs across a codebase
+
+See beads-task-manager agent documentation for multi-session task tracking patterns.
+
+---
+
 **Remember**: Bugs exist in the context of functionality. Don't investigate bugs generically - investigate bugs that affect functionality!

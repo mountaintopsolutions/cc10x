@@ -178,4 +178,15 @@ Notes: <coverage or follow-up if applicable>
 
 ---
 
+## Note on Task Management
+
+For tracking component development work that spans multiple sessions or requires persistent context across compaction cycles, consider using the **beads-task-manager** agent instead of TodoWrite. This is especially useful for:
+- Large features with multiple component dependencies
+- Iterative UI development requiring user feedback
+- Component libraries being built incrementally
+
+See beads-task-manager agent documentation for multi-session task tracking patterns.
+
+---
+
 **Remember**: Components exist to implement functionality. Don't build components generically - build components that implement functionality!

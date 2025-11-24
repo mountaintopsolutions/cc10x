@@ -224,4 +224,15 @@ tools: Bash, Read, Grep
 
 ---
 
+## Note on Task Management
+
+For tracking integration verification work that spans multiple sessions or requires persistent context across compaction cycles, consider using the **beads-task-manager** agent instead of TodoWrite. This is especially useful for:
+- Complex integrations requiring external API testing across multiple sessions
+- Integration failures that need coordination with external teams
+- Multi-step integration testing with blockers or dependencies
+
+See beads-task-manager agent documentation for multi-session task tracking patterns.
+
+---
+
 **Remember**: Integrations exist to support functionality. Don't verify integrations generically - verify integrations that support functionality!
